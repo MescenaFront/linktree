@@ -128,10 +128,14 @@ body {
   left: 0;
   z-index: 1;
   transform: translate(0, -50%);
+
+  animation: slide-back 0.4s;
+}
+#switch button:hover {
+  outline: 8px solid #e79be540;
 }
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.4s forwards;
 }
 #switch span {
   display: block;
@@ -190,8 +194,6 @@ ion-icon {
 #midia-social__list__item {
   display: flex;
   justify-content: center;
-
-  padding: 24px 0;
 }
 #midia-social__list__item a {
   display: flex;
@@ -227,3 +229,23 @@ ion-icon {
 }
 
 /* fim estilo footer */
+
+/* animatio */
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
+}
